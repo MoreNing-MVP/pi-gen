@@ -1,0 +1,13 @@
+[Unit]
+Description='Device manager service'
+Wants='network-online.target'
+After='network-online.target'
+
+[Service]
+ExecStartPre='/bin/sleep 20'
+ExecStart='/bin/bash /home/morening/api_startup_script.sh'
+WorkingDirectory='/home/morening/good_morning_project'
+User='morening'
+
+[Install]
+WantedBy='default.target'
